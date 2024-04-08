@@ -1,6 +1,8 @@
+.cache/
 build/
 autogen/
 gecko_sdk_*/
 example*
 !example.slcp
 !example.slps
+compile_commands.json
