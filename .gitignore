@@ -6,3 +6,4 @@ example*
 !example.slcp
 !example.slps
 compile_commands.json
+ezr32_ezradio_*/

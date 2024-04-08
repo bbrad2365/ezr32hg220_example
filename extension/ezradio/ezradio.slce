@@ -1,0 +1,8 @@
+id: "ezr32_ezradio"
+label: "EZR32 EzRadio"
+version: "1.0.0"
+sdk:
+  id: "gecko_sdk"
+  version: 4.4.1
+component_path:
+  - path: "./"
