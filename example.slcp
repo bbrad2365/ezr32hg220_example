@@ -23,11 +23,28 @@ include:
   file_list:
   - {path: app.h}
 sdk: {id: gecko_sdk, version: 4.4.1}
+sdk_extension:
+  - id: "ezr32_ezradio"
+    version: "1.0.0"
 toolchain_settings: []
 component:
 - {id: sl_system}
 - {id: device_init}
 - {id: EZR32HG220F32R55}
+- {id: gpiointerrupt}
+- {id: iostream}
+- {id: iostream_rtt}
+- {id: segger_rtt_printf}
+- {id: stdio}
+- instance: [inst]
+  id: spidrv
+- {id: app_log}
+- {id: emlib_adc}
+- {id: emlib_cmu}
+- {id: udelay}
+- {id: board_control}
+- id: ezr32_ezradio
+  from: ezr32_ezradio
 define:
 - {name: DEBUG_EFM}
 ui_hints:

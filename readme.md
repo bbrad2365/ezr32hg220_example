@@ -48,6 +48,16 @@ slc signature trust --sdk "/opt/gecko_sdk/"
 slc configuration --gcc-toolchain="/opt/arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi"
 ```
 
+### SDK Extension Setup
+
+According to the specification, slc should allow for in project extensions as well as projects in the SDK, however this is not currently the case and it fails to trust it. We instead need to link it to within the SDK folder for it to work
+
+```Bash
+ln -s $PWD/extension /opt/gecko_sdk/
+slc signature trust --extension-path="/opt/gecko_sdk/extension/ezradio"
+
+```
+
 ## Build Instructions
 
 Generate Makefile and build

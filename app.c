@@ -14,12 +14,31 @@
  * sections of the MSLA applicable to Source Code.
  *
  ******************************************************************************/
+#include <stdio.h>
+#include <stdint.h>
+
+#include "ezradio_cmd.h"
+#include "ezradio_api_lib.h"
+#include "ezradio_plugin_manager.h"
+
+
+void ezradio_print_part_info(void)
+{
+	ezradio_cmd_reply_t reply;
+	EZRADIODRV_HandleData_t appRadioInitData = EZRADIODRV_INIT_DEFAULT;
+
+	ezradioInit( &appRadioInitData );
+	ezradio_part_info(&reply);
+	printf("REV: 0x%02x, PART: 0x%04x, ID: 0x%04x, CUSTOMER: 0x%02x, PBUILD: 0x%02x, ROMID: 0x%02x\n", reply.PART_INFO.CHIPREV, reply.PART_INFO.PART, reply.PART_INFO.ID, reply.PART_INFO.CUSTOMER, reply.PART_INFO.PBUILD, reply.PART_INFO.ROMID);
+}
+
 
 /***************************************************************************//**
  * Initialize application.
  ******************************************************************************/
 void app_init(void)
 {
+	ezradio_print_part_info();
 }
 
 /***************************************************************************//**
